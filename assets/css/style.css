@@ -34,6 +34,10 @@ body {
   box-shadow: 0 2px 10px rgba(13, 26, 70, 0.04);
 }
 
+#upper {
+  text-align: center;
+}
+
 h1,
 h2,
 h3 {
@@ -55,7 +59,8 @@ p {
 }
 
 .hero-image {
-  margin-top: 1rem;
+  display: block;
+  margin: 1rem auto 0;
   max-width: 100%;
   border-radius: 10px;
   border: 1px solid var(--border);
