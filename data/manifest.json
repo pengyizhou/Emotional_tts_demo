@@ -7,8 +7,8 @@
   },
   "sections": {
     "mid": {
-      "title": "Ablation Comparison",
-      "description": "Reference + CosyVoice2 variants (shared text per pair).",
+      "title": "From Neutral to Target Rendered Emotion",
+      "description": "Compare CosyVoice2 with different configurations with only neutral emotion reference given.",
       "systems_order": [
         "reference",
         "cosyvoice2",
@@ -18,9 +18,9 @@
         "cosyvoice2_ds_ccg_cfg_dpo_ext"
       ],
       "systems_meta": {
-        "reference": "Reference Speech (with text)",
+        "reference": "Reference Speech",
         "cosyvoice2": "CosyVoice2",
-        "cosyvoice2_cfg": "CosyVoice2-CFG",
+        "cosyvoice2_cfg": "CosyVoice2-CFG (H)",
         "cosyvoice2_ds_ccg_cfg": "CosyVoice2-DS-CCG-CFG",
         "cosyvoice2_ds_ccg_cfg_dpo": "CosyVoice2-DS-CCG-CFG+DPO",
         "cosyvoice2_ds_ccg_cfg_dpo_ext": "CosyVoice2-DS-CCG-CFG+DPO+EXT."
@@ -29,7 +29,7 @@
         {
           "id": "sample_001",
           "emotion": "Angry",
-          "text": "Sample 1 shared text. Replace this sentence with your real evaluation text.",
+          "text": "In many of his poems, death comes by train: a strongly evocative visual image.",
           "audio": {
             "reference": "data/section_mid/sample_001/ref.wav",
             "cosyvoice2": "data/section_mid/sample_001/cosyvoice2.wav",
@@ -42,7 +42,7 @@
         {
           "id": "sample_002",
           "emotion": "Happy",
-          "text": "Sample 2 shared text. Replace this sentence with your real evaluation text.",
+          "text": "Obviously, the bridal pair has many adjustments to make to their new situation.",
           "audio": {
             "reference": "data/section_mid/sample_002/ref.wav",
             "cosyvoice2": "data/section_mid/sample_002/cosyvoice2.wav",
@@ -55,7 +55,7 @@
         {
           "id": "sample_003",
           "emotion": "Sad",
-          "text": "Sample 3 shared text. Replace this sentence with your real evaluation text.",
+          "text": "But the ships are very slow now and we don't get so many sailors any more",
           "audio": {
             "reference": "data/section_mid/sample_003/ref.wav",
             "cosyvoice2": "data/section_mid/sample_003/cosyvoice2.wav",
@@ -67,8 +67,8 @@
         },
         {
           "id": "sample_004",
-          "emotion": "Fear",
-          "text": "Sample 4 shared text. Replace this sentence with your real evaluation text.",
+          "emotion": "Surprise",
+          "text": "Lighted windows glowed jewel bright through the downpour",
           "audio": {
             "reference": "data/section_mid/sample_004/ref.wav",
             "cosyvoice2": "data/section_mid/sample_004/cosyvoice2.wav",
@@ -77,25 +77,12 @@
             "cosyvoice2_ds_ccg_cfg_dpo": "data/section_mid/sample_004/cosyvoice2_ds_ccg_cfg_dpo.wav",
             "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_mid/sample_004/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
           }
-        },
-        {
-          "id": "sample_005",
-          "emotion": "Surprise",
-          "text": "Sample 5 shared text. Replace this sentence with your real evaluation text.",
-          "audio": {
-            "reference": "data/section_mid/sample_005/ref.wav",
-            "cosyvoice2": "data/section_mid/sample_005/cosyvoice2.wav",
-            "cosyvoice2_cfg": "data/section_mid/sample_005/cosyvoice2_cfg.wav",
-            "cosyvoice2_ds_ccg_cfg": "data/section_mid/sample_005/cosyvoice2_ds_ccg_cfg.wav",
-            "cosyvoice2_ds_ccg_cfg_dpo": "data/section_mid/sample_005/cosyvoice2_ds_ccg_cfg_dpo.wav",
-            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_mid/sample_005/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
-          }
         }
       ]
     },
     "down": {
-      "title": "Baseline Comparison",
-      "description": "Reference + external baselines + our variants (shared text per pair).",
+      "title": "Given the Reference Emotion",
+      "description": "Compare all models, given the reference speech with the specified emotion.",
       "systems_order": [
         "reference",
         "hierspeechpp",
@@ -116,7 +103,7 @@
         {
           "id": "sample_001",
           "emotion": "Angry",
-          "text": "Sample 1 shared text. Replace this sentence with your real evaluation text.",
+          "text": "Then there was a report.",
           "audio": {
             "reference": "data/section_down/sample_001/ref.wav",
             "hierspeechpp": "data/section_down/sample_001/hierspeechpp.wav",
@@ -129,7 +116,7 @@
         {
           "id": "sample_002",
           "emotion": "Happy",
-          "text": "Sample 2 shared text. Replace this sentence with your real evaluation text.",
+          "text": "Victor discussed the relay and the terrace today",
           "audio": {
             "reference": "data/section_down/sample_002/ref.wav",
             "hierspeechpp": "data/section_down/sample_002/hierspeechpp.wav",
@@ -142,7 +129,7 @@
         {
           "id": "sample_003",
           "emotion": "Sad",
-          "text": "Sample 3 shared text. Replace this sentence with your real evaluation text.",
+          "text": "Captain Tom receives an angry letter.",
           "audio": {
             "reference": "data/section_down/sample_003/ref.wav",
             "hierspeechpp": "data/section_down/sample_003/hierspeechpp.wav",
@@ -154,8 +141,8 @@
         },
         {
           "id": "sample_004",
-          "emotion": "Fear",
-          "text": "Sample 4 shared text. Replace this sentence with your real evaluation text.",
+          "emotion": "Surprise",
+          "text": "I must have two to fetch and carry.",
           "audio": {
             "reference": "data/section_down/sample_004/ref.wav",
             "hierspeechpp": "data/section_down/sample_004/hierspeechpp.wav",
@@ -163,19 +150,6 @@
             "cosyvoice2": "data/section_down/sample_004/cosyvoice2.wav",
             "cosyvoice2_ds_ccg_cfg": "data/section_down/sample_004/cosyvoice2_ds_ccg_cfg.wav",
             "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_down/sample_004/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
-          }
-        },
-        {
-          "id": "sample_005",
-          "emotion": "Surprise",
-          "text": "Sample 5 shared text. Replace this sentence with your real evaluation text.",
-          "audio": {
-            "reference": "data/section_down/sample_005/ref.wav",
-            "hierspeechpp": "data/section_down/sample_005/hierspeechpp.wav",
-            "qwen3_tts": "data/section_down/sample_005/qwen3_tts.wav",
-            "cosyvoice2": "data/section_down/sample_005/cosyvoice2.wav",
-            "cosyvoice2_ds_ccg_cfg": "data/section_down/sample_005/cosyvoice2_ds_ccg_cfg.wav",
-            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_down/sample_005/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
           }
         }
       ]
