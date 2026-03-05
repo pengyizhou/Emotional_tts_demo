@@ -1,0 +1,184 @@
+{
+  "page": {
+    "title": "Cross-modal Consistency Guidance for Robust Emotion Control in Auto-Regressive TTS Models",
+    "abstract": "While Text-to-Speech (TTS) systems enable emotional control via natural-language instructions, expressiveness, naturalness, and speech quality degrade when the target emotion conflicts with the textual semantics. We propose a Cross-modal Consistency Guided Classifier-Free Guidance (CFG) method with dynamic scales based on the degree of inconsistency between the text emotion and the explicit speech emotion, and we replace the dropout condition with the text emotion. We also employ a hard-sample mining strategy to distill the CFG guidance signal and improve the TTS model's emotional alignment capability. Evaluations on five emotional corpora and two TTS benchmarks show that our approaches applied to CosyVoice2 achieve up to a 12% absolute improvement in emotion-recognition accuracy and a 10% relative improvement in subjective scores, outperforming baselines including HierSpeech++, Qwen3-TTS, and original CosyVoice2, while preserving intelligibility, naturalness, and high speech quality.",
+    "anonymous4science_url": "",
+    "hero_image": "assets/img/framework.svg"
+  },
+  "sections": {
+    "mid": {
+      "title": "Ablation Comparison",
+      "description": "Reference + CosyVoice2 variants (shared text per pair).",
+      "systems_order": [
+        "reference",
+        "cosyvoice2",
+        "cosyvoice2_cfg",
+        "cosyvoice2_ds_ccg_cfg",
+        "cosyvoice2_ds_ccg_cfg_dpo",
+        "cosyvoice2_ds_ccg_cfg_dpo_ext"
+      ],
+      "systems_meta": {
+        "reference": "Reference Speech (with text)",
+        "cosyvoice2": "CosyVoice2",
+        "cosyvoice2_cfg": "CosyVoice2-CFG",
+        "cosyvoice2_ds_ccg_cfg": "CosyVoice2-DS-CCG-CFG",
+        "cosyvoice2_ds_ccg_cfg_dpo": "CosyVoice2-DS-CCG-CFG+DPO",
+        "cosyvoice2_ds_ccg_cfg_dpo_ext": "CosyVoice2-DS-CCG-CFG+DPO+EXT."
+      },
+      "samples": [
+        {
+          "id": "sample_001",
+          "emotion": "Angry",
+          "text": "Sample 1 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_mid/sample_001/ref.wav",
+            "cosyvoice2": "data/section_mid/sample_001/cosyvoice2.wav",
+            "cosyvoice2_cfg": "data/section_mid/sample_001/cosyvoice2_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_mid/sample_001/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo": "data/section_mid/sample_001/cosyvoice2_ds_ccg_cfg_dpo.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_mid/sample_001/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_002",
+          "emotion": "Happy",
+          "text": "Sample 2 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_mid/sample_002/ref.wav",
+            "cosyvoice2": "data/section_mid/sample_002/cosyvoice2.wav",
+            "cosyvoice2_cfg": "data/section_mid/sample_002/cosyvoice2_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_mid/sample_002/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo": "data/section_mid/sample_002/cosyvoice2_ds_ccg_cfg_dpo.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_mid/sample_002/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_003",
+          "emotion": "Sad",
+          "text": "Sample 3 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_mid/sample_003/ref.wav",
+            "cosyvoice2": "data/section_mid/sample_003/cosyvoice2.wav",
+            "cosyvoice2_cfg": "data/section_mid/sample_003/cosyvoice2_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_mid/sample_003/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo": "data/section_mid/sample_003/cosyvoice2_ds_ccg_cfg_dpo.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_mid/sample_003/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_004",
+          "emotion": "Fear",
+          "text": "Sample 4 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_mid/sample_004/ref.wav",
+            "cosyvoice2": "data/section_mid/sample_004/cosyvoice2.wav",
+            "cosyvoice2_cfg": "data/section_mid/sample_004/cosyvoice2_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_mid/sample_004/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo": "data/section_mid/sample_004/cosyvoice2_ds_ccg_cfg_dpo.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_mid/sample_004/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_005",
+          "emotion": "Surprise",
+          "text": "Sample 5 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_mid/sample_005/ref.wav",
+            "cosyvoice2": "data/section_mid/sample_005/cosyvoice2.wav",
+            "cosyvoice2_cfg": "data/section_mid/sample_005/cosyvoice2_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_mid/sample_005/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo": "data/section_mid/sample_005/cosyvoice2_ds_ccg_cfg_dpo.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_mid/sample_005/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        }
+      ]
+    },
+    "down": {
+      "title": "Baseline Comparison",
+      "description": "Reference + external baselines + our variants (shared text per pair).",
+      "systems_order": [
+        "reference",
+        "hierspeechpp",
+        "qwen3_tts",
+        "cosyvoice2",
+        "cosyvoice2_ds_ccg_cfg",
+        "cosyvoice2_ds_ccg_cfg_dpo_ext"
+      ],
+      "systems_meta": {
+        "reference": "Reference Speech",
+        "hierspeechpp": "HierSpeech++",
+        "qwen3_tts": "Qwen3-TTS",
+        "cosyvoice2": "CosyVoice2",
+        "cosyvoice2_ds_ccg_cfg": "CosyVoice2-DS-CCG-CFG",
+        "cosyvoice2_ds_ccg_cfg_dpo_ext": "CosyVoice2-DS-CCG-CFG+DPO+EXT."
+      },
+      "samples": [
+        {
+          "id": "sample_001",
+          "emotion": "Angry",
+          "text": "Sample 1 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_down/sample_001/ref.wav",
+            "hierspeechpp": "data/section_down/sample_001/hierspeechpp.wav",
+            "qwen3_tts": "data/section_down/sample_001/qwen3_tts.wav",
+            "cosyvoice2": "data/section_down/sample_001/cosyvoice2.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_down/sample_001/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_down/sample_001/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_002",
+          "emotion": "Happy",
+          "text": "Sample 2 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_down/sample_002/ref.wav",
+            "hierspeechpp": "data/section_down/sample_002/hierspeechpp.wav",
+            "qwen3_tts": "data/section_down/sample_002/qwen3_tts.wav",
+            "cosyvoice2": "data/section_down/sample_002/cosyvoice2.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_down/sample_002/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_down/sample_002/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_003",
+          "emotion": "Sad",
+          "text": "Sample 3 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_down/sample_003/ref.wav",
+            "hierspeechpp": "data/section_down/sample_003/hierspeechpp.wav",
+            "qwen3_tts": "data/section_down/sample_003/qwen3_tts.wav",
+            "cosyvoice2": "data/section_down/sample_003/cosyvoice2.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_down/sample_003/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_down/sample_003/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_004",
+          "emotion": "Fear",
+          "text": "Sample 4 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_down/sample_004/ref.wav",
+            "hierspeechpp": "data/section_down/sample_004/hierspeechpp.wav",
+            "qwen3_tts": "data/section_down/sample_004/qwen3_tts.wav",
+            "cosyvoice2": "data/section_down/sample_004/cosyvoice2.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_down/sample_004/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_down/sample_004/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        },
+        {
+          "id": "sample_005",
+          "emotion": "Surprise",
+          "text": "Sample 5 shared text. Replace this sentence with your real evaluation text.",
+          "audio": {
+            "reference": "data/section_down/sample_005/ref.wav",
+            "hierspeechpp": "data/section_down/sample_005/hierspeechpp.wav",
+            "qwen3_tts": "data/section_down/sample_005/qwen3_tts.wav",
+            "cosyvoice2": "data/section_down/sample_005/cosyvoice2.wav",
+            "cosyvoice2_ds_ccg_cfg": "data/section_down/sample_005/cosyvoice2_ds_ccg_cfg.wav",
+            "cosyvoice2_ds_ccg_cfg_dpo_ext": "data/section_down/sample_005/cosyvoice2_ds_ccg_cfg_dpo_ext.wav"
+          }
+        }
+      ]
+    }
+  }
+}
