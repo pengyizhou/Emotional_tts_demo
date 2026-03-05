@@ -46,7 +46,7 @@ function renderUpper(page) {
   link.href = page.anonymous4science_url || '#';
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
-  link.textContent = 'Anonymous4Science Link';
+  link.textContent = 'OpenSource Repository';
   if (!page.anonymous4science_url) {
     link.title = 'Please fill this URL in data/manifest.json';
   }
