@@ -38,6 +38,11 @@ body {
   text-align: center;
 }
 
+#upper .abstract-block {
+  text-align: left;
+  margin-top: 1rem;
+}
+
 h1,
 h2,
 h3 {
@@ -46,6 +51,10 @@ h3 {
 
 p {
   margin: 0.35rem 0;
+}
+
+.abstract-block .meta-link {
+  margin-top: 0.5rem;
 }
 
 .meta-link {

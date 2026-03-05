@@ -33,6 +33,9 @@ function renderUpper(page) {
   const title = document.createElement('h1');
   title.textContent = page.title;
 
+  const abstractBlock = document.createElement('div');
+  abstractBlock.className = 'abstract-block';
+
   const absTitle = document.createElement('h2');
   absTitle.textContent = 'Abstract';
 
@@ -52,7 +55,8 @@ function renderUpper(page) {
   }
 
   linkWrap.append(link);
-  upper.append(title, absTitle, abs, linkWrap);
+  abstractBlock.append(absTitle, abs, linkWrap);
+  upper.append(title, abstractBlock);
 
   if (page.hero_image) {
     const img = document.createElement('img');
